@@ -34,21 +34,21 @@
     <div class="shadow-bottom"></div>
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-            <li class=" nav-item"><a class="d-flex align-items-center" href="index.html"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboard</span></a>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="/home"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboard</span></a>
             </li>
             <li class=" navigation-header"><span data-i18n="Gestionar Datos">Gestionar Datos</span><i data-feather="more-horizontal"></i>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="app-email.html"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="Email">Especialidades</span></a>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="/specialties"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="Email">Especialidades</span></a>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="app-chat.html"><i data-feather="user-plus"></i><span class="menu-title text-truncate" data-i18n="Chat">Médicos</span></a>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="/doctors"><i data-feather="user-plus"></i><span class="menu-title text-truncate" data-i18n="Chat">Médicos</span></a>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="app-todo.html"><i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="Todo">Pacientes</span></a>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="/patients"><i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="Todo">Pacientes</span></a>
             </li>
             <li class=" navigation-header"><span data-i18n="Reportes">Reportes</span><i data-feather="more-horizontal"></i>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="ui-typography.html"><i data-feather="list"></i><span class="menu-title text-truncate" data-i18n="Typography">Frecuencia de Citas</span></a>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="list"></i><span class="menu-title text-truncate" data-i18n="Typography">Frecuencia de Citas</span></a>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="ui-colors.html"><i data-feather="activity"></i><span class="menu-title text-truncate" data-i18n="Colors">Médicos más activos</span></a>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="activity"></i><span class="menu-title text-truncate" data-i18n="Colors">Médicos más activos</span></a>
             </li>
             
             

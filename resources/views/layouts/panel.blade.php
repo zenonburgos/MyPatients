@@ -31,6 +31,7 @@
 
     <!-- BEGIN: Page CSS-->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/core/menu/menu-types/vertical-menu.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/plugins/forms/pickers/form-flat-pickr.css') }}">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
@@ -347,40 +348,7 @@
     @include('includes.panel.menu')
 
     <!-- BEGIN: Content-->
-    <div class="app-content content ">
-        <div class="content-overlay"></div>
-        <div class="header-navbar-shadow"></div>
-        <div class="content-wrapper container-xxl p-0">
-            <div class="content-header row">
-                <div class="content-header-left col-md-9 col-12 mb-2">
-                    <div class="row breadcrumbs-top">
-                        <div class="col-12">
-                            <h2 class="content-header-title float-left mb-0">Layout Empty</h2>
-                            <div class="breadcrumb-wrapper">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a>
-                                    </li>
-                                    <li class="breadcrumb-item"><a href="#">Layouts</a>
-                                    </li>
-                                    <li class="breadcrumb-item active">Layout Empty
-                                    </li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-            <div class="content-body">
-                <div class="row">
-                    <div class="col-12">
-                        @yield('content')
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
+    @yield('content')
     <!-- END: Content-->
 
     <div class="sidenav-overlay"></div>
@@ -399,6 +367,10 @@
     <script src="{{ asset('js/core/app-menu.js') }}"></script>
     <script src="{{ asset('js/core/app.js') }}"></script>
     <!-- END: Theme JS-->
+
+    <!-- BEGIN: Page JS-->
+    <script src="{{ asset('js/scripts/tables/table-datatables-advanced.js') }}"></script>
+    <!-- END: Page JS-->
 
     <script>
         $(window).on('load', function() {
