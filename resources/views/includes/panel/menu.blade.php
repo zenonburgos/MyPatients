@@ -59,7 +59,7 @@
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="activity"></i><span class="menu-title text-truncate" data-i18n="Colors">Médicos más activos</span></a>
                 </li>
             @elseif(auth()->user()->role == 'doctor')
-                <li class=" nav-item"><a class="d-flex align-items-center" href="/specialties"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="Email">Gestionar Horario</span></a>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="/schedule"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="Email">Gestionar Horario</span></a>
                 </li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="/doctors"><i data-feather="user-plus"></i><span class="menu-title text-truncate" data-i18n="Chat">Mis Citas</span></a>
                 </li>
