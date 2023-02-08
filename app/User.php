@@ -16,8 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
-
+        'name', 'email', 'password', 'dni', 'address', 'phone', 'role'
     ];
 
     /**
@@ -29,4 +28,14 @@ class User extends Authenticatable
         'password', 'remember_token', 'pivot',
         'email_verified_at', 'created_at', 'updated_at'
     ];
+
+    public function scopePatients($query)
+    {
+        return $query->where('role', 'patient');
+    }
+
+    public function scopeDoctors($query)
+    {
+        return $query->where('role', 'doctor');
+    }
 }

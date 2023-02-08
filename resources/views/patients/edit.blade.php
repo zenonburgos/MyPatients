@@ -9,13 +9,13 @@
             <div class="content-header-left col-md-9 col-12 mb-2">
                 <div class="row breadcrumbs-top">
                     <div class="col-12">
-                        <h2 class="content-header-title float-left mb-0">Nuevo Médico</h2>
+                        <h2 class="content-header-title float-left mb-0">Editar Paciente</h2>
                         <div class="breadcrumb-wrapper">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/">Inicio</a>
                                 </li>
                                 
-                                <li class="breadcrumb-item active">Médicos
+                                <li class="breadcrumb-item active">Pacientes
                                 </li>
                             </ol>
                         </div>
@@ -25,7 +25,7 @@
             <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
                 <div class="form-group breadcrumb-right">
                     <div class="dropdown">
-                        <a href="{{ url('specialties') }}" class="btn-icon btn btn-secondary btn-round btn-sm dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">Cancelar y volver</a>
+                        <a href="{{ url('patients') }}" class="btn-icon btn btn-secondary btn-round btn-sm dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">Cancelar y volver</a>
                     </div>
                 </div>
             </div>
@@ -36,9 +36,7 @@
             <section id="responsive-datatable">
                 <div class="row">
                     <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                            @if ($errors->any())
+                        @if ($errors->any())
                                 <div class="alert alert-danger" role="alert">
                                     <ul>
                                         @foreach ($errors->all() as $error)
@@ -47,31 +45,36 @@
                                     </ul>
                                 </div>
                             @endif
-                            <form action="{{ url('doctors') }}" method="post">
+                        <div class="card">
+                            <div class="card-body">
+                            
+                            <form action="{{ url('patients/'.$patient->id) }}" method="post">
                                 @csrf
+                                @method('PUT')
                                 <div class="form-group">
                                     <label for="name">Nombre del médico</label>
-                                    <input type="text" name="name" class="form-control" value="{{ old('name') }}" required>
+                                    <input type="text" name="name" class="form-control" value="{{ old('name', $patient->name) }}" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="text" name="email" class="form-control" value="{{ old('email') }}">
+                                    <input type="text" name="email" class="form-control" value="{{ old('email', $patient->email) }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="dni">Doc. de Identidad</label>
-                                    <input type="text" name="dni" class="form-control" value="{{ old('dni') }}">
+                                    <input type="text" name="dni" class="form-control" value="{{ old('dni', $patient->dni) }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="address">Dirección</label>
-                                    <input type="text" name="address" class="form-control" value="{{ old('address') }}">
+                                    <input type="text" name="address" class="form-control" value="{{ old('address', $patient->address) }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="phone">Teléfono / móvil</label>
-                                    <input type="text" name="phone" class="form-control" value="{{ old('phone') }}">
+                                    <input type="text" name="phone" class="form-control" value="{{ old('phone', $patient->phone) }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Contraseña</label>
-                                    <input type="text" name="password" class="form-control" value="{{ str_random(6) }}">
+                                    <input type="text" name="password" class="form-control" value="">
+                                    <p>Ingrese un valor solo si desea modificar la contraseña.</p>
                                 </div>
                                 <button type="submit" class="btn btn-primary">
                                     Guardar

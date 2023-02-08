@@ -9,13 +9,13 @@
             <div class="content-header-left col-md-9 col-12 mb-2">
                 <div class="row breadcrumbs-top">
                     <div class="col-12">
-                        <h2 class="content-header-title float-left mb-0">Médicos</h2>
+                        <h2 class="content-header-title float-left mb-0">Pacientes</h2>
                         <div class="breadcrumb-wrapper">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/">Inicio</a>
                                 </li>
                                 
-                                <li class="breadcrumb-item active">Médicos
+                                <li class="breadcrumb-item active">Pacientes
                                 </li>
                             </ol>
                         </div>
@@ -25,7 +25,7 @@
             <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
                 <div class="form-group breadcrumb-right">
                     <div class="dropdown">
-                        <a href="{{ url('doctors/create') }}" class="btn-icon btn btn-success btn-round btn-sm dropdown-toggle" aria-haspopup="true" aria-expanded="false">Nuevo Médico</a>
+                        <a href="{{ url('patients/create') }}" class="btn-icon btn btn-success btn-round btn-sm dropdown-toggle" aria-haspopup="true" aria-expanded="false">Nuevo Paciente</a>
                     </div>
                 </div>
             </div>
@@ -56,23 +56,22 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($doctors as $doctor)
+                                        @foreach ($patients as $patient)
                                         <tr>
                                             <th scope="row">
-                                                {{ $doctor->name }}
+                                                {{ $patient->name }}
                                             </th>
                                             <td>
-                                                {{ $doctor->email }}
+                                                {{ $patient->email }}
                                             </td>
                                             <td>
-                                                {{ $doctor->dni }}
+                                                {{ $patient->dni }}
                                             </td>
                                             <td>
-                                                <form action="{{ url('/doctors/'.$doctor->id) }}" method="POST">
+                                                <form action="{{ url('/patients/'.$patient->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    
-                                                    <a href="{{ url('/doctors/'.$doctor->id.'/edit') }}" class="btn btn-sm btn-primary">Editar</a>
+                                                    <a href="{{ url('/patients/'.$patient->id.'/edit') }}" class="btn btn-sm btn-primary">Editar</a>
                                                     <button class="btn btn-sm btn-danger type="submit">Eliminar</button>
                                                 </form>
                                             </td>
@@ -87,6 +86,9 @@
             </section>
             <!--/ Responsive Datatable -->
         </div>
+    </div>
+    <div class="card-body">
+        {{ $patients->links() }}
     </div>
 </div>
 

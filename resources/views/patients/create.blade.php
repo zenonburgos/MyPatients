@@ -9,13 +9,13 @@
             <div class="content-header-left col-md-9 col-12 mb-2">
                 <div class="row breadcrumbs-top">
                     <div class="col-12">
-                        <h2 class="content-header-title float-left mb-0">Nuevo Médico</h2>
+                        <h2 class="content-header-title float-left mb-0">Nuevo Paciente</h2>
                         <div class="breadcrumb-wrapper">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/">Inicio</a>
                                 </li>
                                 
-                                <li class="breadcrumb-item active">Médicos
+                                <li class="breadcrumb-item active">Pacientes
                                 </li>
                             </ol>
                         </div>
@@ -47,10 +47,10 @@
                                     </ul>
                                 </div>
                             @endif
-                            <form action="{{ url('doctors') }}" method="post">
+                            <form action="{{ url('patients') }}" method="post">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="name">Nombre del médico</label>
+                                    <label for="name">Nombre del paciente</label>
                                     <input type="text" name="name" class="form-control" value="{{ old('name') }}" required>
                                 </div>
                                 <div class="form-group">
@@ -66,7 +66,7 @@
                                     <input type="text" name="address" class="form-control" value="{{ old('address') }}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="phone">Teléfono / móvil</label>
+                                    <label for="phone">Teléfono</label>
                                     <input type="text" name="phone" class="form-control" value="{{ old('phone') }}">
                                 </div>
                                 <div class="form-group">

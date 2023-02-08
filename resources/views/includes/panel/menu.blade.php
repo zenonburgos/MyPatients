@@ -2,7 +2,7 @@
 <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
-            <li class="nav-item mr-auto"><a class="navbar-brand" href="../../../html/ltr/vertical-menu-template-dark/index.html"><span class="brand-logo">
+            <li class="nav-item mr-auto"><a class="navbar-brand" href="#"><span class="brand-logo">
                         <svg viewbox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="24">
                             <defs>
                                 <lineargradient id="linearGradient-1" x1="100%" y1="10.5120544%" x2="50%" y2="89.4879456%">
@@ -34,24 +34,43 @@
     <div class="shadow-bottom"></div>
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+            @if(auth()->user()->role == 'admin')
             <li class=" nav-item"><a class="d-flex align-items-center" href="/home"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboard</span></a>
             </li>
             <li class=" navigation-header"><span data-i18n="Gestionar Datos">Gestionar Datos</span><i data-feather="more-horizontal"></i>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="/specialties"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="Email">Especialidades</span></a>
+            @else
+            <li class=" navigation-header"><span data-i18n="Gestionar Datos">Menú</span><i data-feather="more-horizontal"></i>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="/doctors"><i data-feather="user-plus"></i><span class="menu-title text-truncate" data-i18n="Chat">Médicos</span></a>
-            </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="/patients"><i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="Todo">Pacientes</span></a>
-            </li>
-            <li class=" navigation-header"><span data-i18n="Reportes">Reportes</span><i data-feather="more-horizontal"></i>
-            </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="list"></i><span class="menu-title text-truncate" data-i18n="Typography">Frecuencia de Citas</span></a>
-            </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="activity"></i><span class="menu-title text-truncate" data-i18n="Colors">Médicos más activos</span></a>
-            </li>
-            
-            
+            @endif
+
+            @if(auth()->user()->role == 'admin')
+                
+                <li class=" nav-item"><a class="d-flex align-items-center" href="/specialties"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="Email">Especialidades</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="/doctors"><i data-feather="user-plus"></i><span class="menu-title text-truncate" data-i18n="Chat">Médicos</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="/patients"><i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="Todo">Pacientes</span></a>
+                </li>
+                <li class=" navigation-header"><span data-i18n="Reportes">Reportes</span><i data-feather="more-horizontal"></i>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="list"></i><span class="menu-title text-truncate" data-i18n="Typography">Frecuencia de Citas</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="activity"></i><span class="menu-title text-truncate" data-i18n="Colors">Médicos más activos</span></a>
+                </li>
+            @elseif(auth()->user()->role == 'doctor')
+                <li class=" nav-item"><a class="d-flex align-items-center" href="/specialties"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="Email">Gestionar Horario</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="/doctors"><i data-feather="user-plus"></i><span class="menu-title text-truncate" data-i18n="Chat">Mis Citas</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="/doctors"><i data-feather="user-plus"></i><span class="menu-title text-truncate" data-i18n="Chat">Mis Pacientes</span></a>
+                </li>
+            @else {{--paciente--}}
+                <li class=" nav-item"><a class="d-flex align-items-center" href="/specialties"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="Email">Reservar Cita</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="/doctors"><i data-feather="user-plus"></i><span class="menu-title text-truncate" data-i18n="Chat">Mis Citas</span></a>
+                </li>
+            @endif
         </ul>
     </div>
 </div>
